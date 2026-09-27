@@ -81,7 +81,7 @@ export default function App(){
 
       <SearchBox
         value={search}
-        onChange={(value: string) => debouncedSearch(value)}
+        onSearch={(value: string) => debouncedSearch(value)}
       />
 
       {isLoading && <p>Loading...</p>}
