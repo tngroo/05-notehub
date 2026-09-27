@@ -1,10 +1,10 @@
 import { useQuery, useQueryClient, useMutation } from "@tanstack/react-query";
-import { deleteNote, fetchNotes } from "../../Services/NoteService";
+import { deleteNote, fetchNotes } from "../../services/NoteService";
 import NoteList from '../NoteList/NoteList'
 import css from './App.module.css'
 import { useState } from "react";
 import Pagination from "../Pagination/Pagination";
-import { createNote } from "../../Services/NoteService";
+import { createNote } from "../../services/NoteService";
 import Modal from "../Modal/Modal";
 import NoteForm from "../NoteForm/NoteForm";
 import { useDebouncedCallback } from "use-debounce";
@@ -44,7 +44,7 @@ export default function App(){
     }
   })
 
- return (
+return (
     <div className={css.app}>
       <header className={css.toolbar}>
         <button className={css.button} onClick={() => setIsModalOpen(true)}>
