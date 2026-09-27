@@ -25,8 +25,6 @@ export async function fetchNotes(params: FetchNotesParams): Promise<FetchNotesRe
     const {data} = await api.get<FetchNotesResponse>("/notes", {
         params: queryParams,
     })
-    
-
     return data;
     
 }
