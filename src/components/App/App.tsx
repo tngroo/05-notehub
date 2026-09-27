@@ -3,7 +3,7 @@ import NoteList from '../NoteList/NoteList'
 import css from './App.module.css'
 import { useState } from "react";
 import Pagination from "../Pagination/Pagination";
-import { createNote, deleteNote, fetchNotes } from "../../services/noteService";
+import { createNote, deleteNote, fetchNotes } from "../../services/note";
 import Modal from "../Modal/Modal";
 import NoteForm from "../NoteForm/NoteForm";
 import { useDebouncedCallback } from "use-debounce";

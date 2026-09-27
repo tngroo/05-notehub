@@ -1,5 +1,5 @@
 import { api } from "../Api/Note";
-import { Note } from "../types/qweqweqwe";
+import { Note } from "../types/note";
 
 interface FetchNotesParams{
 page?: number;
