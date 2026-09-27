@@ -18,6 +18,7 @@ export default function App(){
   const [page, setPage] = useState(1)
   const [isModalOpen, setIsModalOpen] = useState(false)
   const [search, setSearch] = useState("");
+  const [inputValue, setInputValue] = useState("");
   const queryClient = useQueryClient()
   const {data, isLoading, isError} = useQuery({
     queryKey: ["notes", page, search], 
@@ -80,9 +81,13 @@ export default function App(){
     )}
 
       <SearchBox
-        value={search}
-        onSearch={(value: string) => debouncedSearch(value)}
-      />
+  value={inputValue}
+  onSearch={(value) => {
+    setInputValue(value)
+    debouncedSearch(value) 
+  }}
+/>
+
 
       {isLoading && <p>Loading...</p>}
       {isError && <p>Error loading notes</p>}
