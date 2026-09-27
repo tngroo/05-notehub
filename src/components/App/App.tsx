@@ -20,7 +20,7 @@ export default function App(){
   const [search, setSearch] = useState("");
   const queryClient = useQueryClient()
   const {data, isLoading, isError} = useQuery({
-    queryKey: ["notes", page], 
+    queryKey: ["notes", page, search], 
     queryFn: ()=> fetchNotes({page, perPage:12, search})
   })
   const notes = data?.items ?? [];
