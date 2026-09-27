@@ -1,10 +1,10 @@
 import { useQuery, useQueryClient, useMutation } from "@tanstack/react-query";
-import { deleteNote, fetchNotes } from "../../services/noteService";
+import { deleteNote, fetchNotes } from "../../services/NoteService";
 import NoteList from '../NoteList/NoteList'
 import css from './App.module.css'
 import { useState } from "react";
 import Pagination from "../Pagination/Pagination";
-import { createNote } from "../../services/noteService";
+import { createNote } from "../../services/NoteService";
 import Modal from "../Modal/Modal";
 import NoteForm from "../NoteForm/NoteForm";
 import { useDebouncedCallback } from "use-debounce";
