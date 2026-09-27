@@ -35,14 +35,6 @@ export default function App(){
     }
   })
 
-  const deleteMutation = useMutation({
-    mutationFn: deleteNote,
-    onSuccess: ()=> {
-      queryClient.invalidateQueries({queryKey: ['notes']})
-    }
-  })
-
-
   return (
   <div className={css.app}>
     <header className={css.toolbar}>
@@ -71,9 +63,7 @@ export default function App(){
       <>
         {notes.length > 0 ? (
           <NoteList
-            notes={notes}
-            onDelete={(id) => deleteMutation.mutate(String(id))}
-          />
+            notes={notes}/>
         ) : (
           <p>No notes found</p>
         )}

@@ -24,10 +24,10 @@ export async function fetchNotes(
       perPage: 12,
       sortBy: "created"
     },
+     headers: {
+      Authorization: `Bearer ${import.meta.env.VITE_NOTEHUB_TOKEN}`,
+    },
   });
-
-  console.log("STATUS:", response.status);
-  console.log("DATA:", response.data);
 
   return response.data;
 }
