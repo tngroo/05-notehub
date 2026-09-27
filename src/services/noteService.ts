@@ -38,12 +38,22 @@ export interface CreateNoteParams {
     tag: string
 }
 
-export async function createNote(params: CreateNoteParams): Promise<Note>{
-    const {data} = await api.post<Note>("/notes", params)
-    return data
+export async function createNote(params: CreateNoteParams): Promise<Note> {
+  const { data } = await api.post<Note>("/notes", params, {
+    headers: {
+      Authorization: `Bearer ${import.meta.env.VITE_NOTEHUB_TOKEN}`,
+    },
+  });
+
+  return data;
 }
 
 export async function deleteNote(id: string): Promise<Note> {
-    const {data} = await api.delete<Note>(`/notes/${id}`)
-    return data
+  const { data } = await api.delete<Note>(`/notes/${id}`, {
+    headers: {
+      Authorization: `Bearer ${import.meta.env.VITE_NOTEHUB_TOKEN}`,
+    },
+  });
+
+  return data;
 }
